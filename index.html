@@ -223,7 +223,7 @@ function startInvitationAutoScroll() {
   if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
   window.scrollTo(0, 0);
   let lastTime = null;
-  const speed = 120; // pixels per second; adjust for faster/slower scrolling
+  const speed = 200; // pixels per second; adjust for faster/slower scrolling
   function advance(now) {
     if (lastTime !== null) {
       const bottom = document.documentElement.scrollHeight - window.innerHeight;
