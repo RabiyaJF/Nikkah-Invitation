@@ -210,7 +210,34 @@
 <audio id="backgroundMusic" src="background-music.mp3" loop preload="auto"></audio>
 <script>
 
-const entrance=document.getElementById('entrance');const page=document.getElementById('page');document.getElementById('openBtn').addEventListener('click',()=>{entrance.classList.add('open');page.classList.add('visible');setTimeout(()=>{entrance.style.display='none';document.body.style.overflow='auto'},2600);});document.body.style.overflow='hidden';
+const entrance=document.getElementById('entrance');const page=document.getElementById('page');document.getElementById('openBtn').addEventListener('click',()=>{entrance.classList.add('open');page.classList.add('visible');setTimeout(()=>{entrance.style.display='none';document.body.style.overflow='auto';startInvitationAutoScroll();},2600);});document.body.style.overflow='hidden';
+
+// After the doors open, gently scroll through the invitation to the end.
+// Visitors can take control at any time by touching, scrolling, or pressing a key.
+let autoScrollFrame = null;
+function stopInvitationAutoScroll() {
+  if (autoScrollFrame !== null) cancelAnimationFrame(autoScrollFrame);
+  autoScrollFrame = null;
+}
+function startInvitationAutoScroll() {
+  if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+  window.scrollTo(0, 0);
+  let lastTime = null;
+  const speed = 80; // pixels per second; adjust for faster/slower scrolling
+  function advance(now) {
+    if (lastTime !== null) {
+      const bottom = document.documentElement.scrollHeight - window.innerHeight;
+      if (window.scrollY >= bottom - 2) { stopInvitationAutoScroll(); return; }
+      window.scrollTo(0, Math.min(bottom, window.scrollY + speed * Math.min((now-lastTime)/1000, 0.1)));
+    }
+    lastTime = now;
+    autoScrollFrame = requestAnimationFrame(advance);
+  }
+  autoScrollFrame = requestAnimationFrame(advance);
+}
+['wheel', 'touchstart', 'pointerdown', 'keydown'].forEach(type =>
+  window.addEventListener(type, stopInvitationAutoScroll, {passive:true})
+);
 
 // To enable RSVP later, replace the empty number with the full international number (digits only, e.g. 919876543210).
 
