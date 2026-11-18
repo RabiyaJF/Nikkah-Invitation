@@ -218,6 +218,26 @@
   .hero .arch img.bouquet-bottom-left { bottom: -30px !important; left: -26px !important; }
   .scroll-hint { margin-top: 8px; font-size: 10px; }
 }
+/* Place the scroll cue ABOVE the invitation card, with a tappable target. */
+.hero .scroll-hint {
+  order: -1;
+  display: inline-block;
+  align-self: center;
+  margin: 0 0 22px;
+  padding: 10px 18px;
+  border: 1px solid #b9915777;
+  border-radius: 22px;
+  background: #fff9ee;
+  color: #846b43;
+  font: 600 11px 'DM Sans', sans-serif;
+  letter-spacing: .16em;
+  cursor: pointer;
+  position: relative;
+  z-index: 7;
+}
+@media (max-width: 600px) {
+  .hero .scroll-hint { margin: 0 0 16px; padding: 9px 14px; font-size: 10px; }
+}
 </style>
 
 </head>
@@ -237,7 +257,7 @@
   <div class="entrance-flower flower-right" aria-hidden="true"></div>
   <button class="open-btn" id="openBtn" type="button">✦ &nbsp; OPEN INVITATION &nbsp; ✦</button>
 </div>
-<main class="page" id="page"><section class="hero"><div class="golden-petal-layer" id="goldenPetalLayer" aria-hidden="true"></div><div class="arch"><img class="bouquet bouquet-top-right" src="blush-sage-rose-bouquet.png" alt="" aria-hidden="true"><img class="bouquet bouquet-bottom-left" src="blush-sage-rose-bouquet.png" alt="" aria-hidden="true"><p class="bismillah" lang="ar" dir="rtl">بِسْمِ اللَّهِ الرَّحْمَٰنِ الرَّحِيمِ</p><div class="eyebrow">Together with their families</div><div class="ornament">✧</div><div class="eyebrow">Joyfully invite you to the Nikkah of</div><h1 class="names">Bushra <em>&</em> Aseem</h1><div class="ornament">❦</div><p class="subline">Two hearts, one beautiful beginning.</p></div><div class="scroll-hint">Scroll ↓</div></section>
+<main class="page" id="page"><section class="hero"><div class="golden-petal-layer" id="goldenPetalLayer" aria-hidden="true"></div><div class="arch"><img class="bouquet bouquet-top-right" src="blush-sage-rose-bouquet.png" alt="" aria-hidden="true"><img class="bouquet bouquet-bottom-left" src="blush-sage-rose-bouquet.png" alt="" aria-hidden="true"><p class="bismillah" lang="ar" dir="rtl">بِسْمِ اللَّهِ الرَّحْمَٰنِ الرَّحِيمِ</p><div class="eyebrow">Together with their families</div><div class="ornament">✧</div><div class="eyebrow">Joyfully invite you to the Nikkah of</div><h1 class="names">Bushra <em>&</em> Aseem</h1><div class="ornament">❦</div><p class="subline">Two hearts, one beautiful beginning.</p></div><button class="scroll-hint" type="button" onclick="document.querySelector('.details').scrollIntoView({behavior:'smooth'})" aria-label="Scroll down to family details">SCROLL DOWN ↓</button></section>
 
 <section class="details"><span class="section-flower section-flower-left" aria-hidden="true"></span><span class="section-flower section-flower-right" aria-hidden="true"></span><div class="section-label">With the blessings of Allah</div><h2>And Our Families</h2><div class="parents"><div class="parent-card"><p>Beloved daughter of<br>Dr. Shabnam Ara<br>& Javed Farooqui</p></div><div class="parent-card"><p>Beloved son of<br>Hajjan Shagufta<br>& Late Haji Mansur Abdul Rajak Shaikh</p></div></div></section>
 
