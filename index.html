@@ -179,65 +179,6 @@
  .hero::before,.hero::after{width:125px;height:145px;opacity:.42}
  .hero::before{left:-95px;top:29%}.hero::after{right:-95px;bottom:24%}
 }
-
-/* Compact second page on phones: hint that more content follows */
-@media (max-width:600px) {
-  .hero { min-height:85svh; padding:42px 20px 20px; }
-  .hero .arch { width:88%; padding:65px 22px 65px; }
-  .hero .names { font-size:clamp(55px,12vw,82px); }
-  .hero .arch img.bouquet { width:145px!important; }
-  .scroll-hint { margin-top:15px; }
-}
-
-/* Extra compact second screen on phones: show the next section sooner */
-@media (max-width: 600px) {
-  .hero { min-height: 72svh; padding: 28px 14px 16px; }
-  .hero .arch { width: 78%; padding: 42px 16px 42px; }
-  .hero .bismillah { font-size: 24px; margin-bottom: 12px; }
-  .hero .eyebrow { font-size: 9px; letter-spacing: .18em; }
-  .hero .ornament { margin: 9px 0; font-size: 19px; }
-  .hero .names { font-size: clamp(47px, 11vw, 67px); margin: 12px 0; }
-  .hero .subline { font-size: 17px; margin-top: 13px; }
-  .hero .arch img.bouquet { width: 115px !important; }
-  .hero .arch img.bouquet-top-right { top: -40px !important; right: -38px !important; }
-  .hero .arch img.bouquet-bottom-left { bottom: -42px !important; left: -38px !important; }
-  .scroll-hint { margin-top: 12px; }
-}
-
-/* Extra-small mobile invitation: next section peeks into view */
-@media (max-width: 600px) {
-  .hero { min-height: 60svh; padding: 20px 12px 12px; }
-  .hero .arch { width: 70%; padding: 26px 12px 28px; }
-  .hero .bismillah { font-size: 20px; margin-bottom: 8px; }
-  .hero .eyebrow { font-size: 8px; letter-spacing: .1em; }
-  .hero .ornament { margin: 6px 0; font-size: 16px; }
-  .hero .names { font-size: clamp(36px, 9vw, 53px); margin: 9px 0; }
-  .hero .subline { font-size: 14px; margin-top: 9px; }
-  .hero .arch img.bouquet { width: 90px !important; }
-  .hero .arch img.bouquet-top-right { top: -28px !important; right: -26px !important; }
-  .hero .arch img.bouquet-bottom-left { bottom: -30px !important; left: -26px !important; }
-  .scroll-hint { margin-top: 8px; font-size: 10px; }
-}
-/* Place the scroll cue ABOVE the invitation card, with a tappable target. */
-.hero .scroll-hint {
-  order: -1;
-  display: inline-block;
-  align-self: center;
-  margin: 0 0 22px;
-  padding: 10px 18px;
-  border: 1px solid #b9915777;
-  border-radius: 22px;
-  background: #fff9ee;
-  color: #846b43;
-  font: 600 11px 'DM Sans', sans-serif;
-  letter-spacing: .16em;
-  cursor: pointer;
-  position: relative;
-  z-index: 7;
-}
-@media (max-width: 600px) {
-  .hero .scroll-hint { margin: 0 0 16px; padding: 9px 14px; font-size: 10px; }
-}
 </style>
 
 </head>
@@ -257,7 +198,7 @@
   <div class="entrance-flower flower-right" aria-hidden="true"></div>
   <button class="open-btn" id="openBtn" type="button">✦ &nbsp; OPEN INVITATION &nbsp; ✦</button>
 </div>
-<main class="page" id="page"><section class="hero"><div class="golden-petal-layer" id="goldenPetalLayer" aria-hidden="true"></div><div class="arch"><img class="bouquet bouquet-top-right" src="blush-sage-rose-bouquet.png" alt="" aria-hidden="true"><img class="bouquet bouquet-bottom-left" src="blush-sage-rose-bouquet.png" alt="" aria-hidden="true"><p class="bismillah" lang="ar" dir="rtl">بِسْمِ اللَّهِ الرَّحْمَٰنِ الرَّحِيمِ</p><div class="eyebrow">Together with their families</div><div class="ornament">✧</div><div class="eyebrow">Joyfully invite you to the Nikkah of</div><h1 class="names">Bushra <em>&</em> Aseem</h1><div class="ornament">❦</div><p class="subline">Two hearts, one beautiful beginning.</p></div><button class="scroll-hint" type="button" onclick="document.querySelector('.details').scrollIntoView({behavior:'smooth'})" aria-label="Scroll down to family details">SCROLL DOWN ↓</button></section>
+<main class="page" id="page"><section class="hero"><div class="golden-petal-layer" id="goldenPetalLayer" aria-hidden="true"></div><div class="scroll-hint">Scroll ↓</div><div class="arch"><img class="bouquet bouquet-top-right" src="blush-sage-rose-bouquet.png" alt="" aria-hidden="true"><img class="bouquet bouquet-bottom-left" src="blush-sage-rose-bouquet.png" alt="" aria-hidden="true"><p class="bismillah" lang="ar" dir="rtl">بِسْمِ اللَّهِ الرَّحْمَٰنِ الرَّحِيمِ</p><div class="eyebrow">Together with their families</div><div class="ornament">✧</div><div class="eyebrow">Joyfully invite you to the Nikkah of</div><h1 class="names">Bushra <em>&</em> Aseem</h1><div class="ornament">❦</div><p class="subline">Two hearts, one beautiful beginning.</p></div></section>
 
 <section class="details"><span class="section-flower section-flower-left" aria-hidden="true"></span><span class="section-flower section-flower-right" aria-hidden="true"></span><div class="section-label">With the blessings of Allah</div><h2>And Our Families</h2><div class="parents"><div class="parent-card"><p>Beloved daughter of<br>Dr. Shabnam Ara<br>& Javed Farooqui</p></div><div class="parent-card"><p>Beloved son of<br>Hajjan Shagufta<br>& Late Haji Mansur Abdul Rajak Shaikh</p></div></div></section>
 
@@ -282,7 +223,7 @@ function startInvitationAutoScroll() {
   if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
   window.scrollTo(0, 0);
   let lastTime = null;
-  const speed = 200; // pixels per second; adjust for faster/slower scrolling
+  const speed = 80; // pixels per second; adjust for faster/slower scrolling
   function advance(now) {
     if (lastTime !== null) {
       const bottom = document.documentElement.scrollHeight - window.innerHeight;
