@@ -179,6 +179,15 @@
  .hero::before,.hero::after{width:125px;height:145px;opacity:.42}
  .hero::before{left:-95px;top:29%}.hero::after{right:-95px;bottom:24%}
 }
+
+/* Compact second page on phones: hint that more content follows */
+@media (max-width:600px) {
+  .hero { min-height:85svh; padding:42px 20px 20px; }
+  .hero .arch { width:88%; padding:65px 22px 65px; }
+  .hero .names { font-size:clamp(55px,12vw,82px); }
+  .hero .arch img.bouquet { width:145px!important; }
+  .scroll-hint { margin-top:15px; }
+}
 </style>
 
 </head>
