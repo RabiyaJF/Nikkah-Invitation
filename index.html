@@ -188,6 +188,21 @@
   .hero .arch img.bouquet { width:145px!important; }
   .scroll-hint { margin-top:15px; }
 }
+
+/* Extra compact second screen on phones: show the next section sooner */
+@media (max-width: 600px) {
+  .hero { min-height: 72svh; padding: 28px 14px 16px; }
+  .hero .arch { width: 78%; padding: 42px 16px 42px; }
+  .hero .bismillah { font-size: 24px; margin-bottom: 12px; }
+  .hero .eyebrow { font-size: 9px; letter-spacing: .18em; }
+  .hero .ornament { margin: 9px 0; font-size: 19px; }
+  .hero .names { font-size: clamp(47px, 11vw, 67px); margin: 12px 0; }
+  .hero .subline { font-size: 17px; margin-top: 13px; }
+  .hero .arch img.bouquet { width: 115px !important; }
+  .hero .arch img.bouquet-top-right { top: -40px !important; right: -38px !important; }
+  .hero .arch img.bouquet-bottom-left { bottom: -42px !important; left: -38px !important; }
+  .scroll-hint { margin-top: 12px; }
+}
 </style>
 
 </head>
